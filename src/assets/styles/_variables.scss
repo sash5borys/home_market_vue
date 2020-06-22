@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  font-size: 14px;
+  box-sizing: border-box;
+};
+$font_weigth: ( 
+  "regular": 400,
+  "medium": 600,
+  "bold": 800
+);
+$font_size: (
+  "small": 12px,
+  "medium": 14px,
+  "big": 16px
+);
+$image_size: (
+  "small": 32px,
+  "medium": 34px,
+  "big": 36px
+);
+$padding_container: (
+  "small": 1rem,
+  "medium": 1.5rem,
+  "big": 2rem
+);
+$margin_container: (
+  "small": 0.5rem,
+  "medium": 0.75rem,
+  "big": 1rem
+);
+@mixin flexContainer($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-start;
+}
+@mixin heighted() {
+  height: 100%;
+}
+@mixin widthed() {
+  width: 100%;
+}
+@mixin centered() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+$font_logo: "Exo 2", sans-serif;
+$font_title: "Montserrat", sans-serif;
+$color_black: #000;
+$color_white: #fff;
+$color_yellow: #e2b220;
+$color_orange: #ff4800;
+$color_blue: #1b1f4c;
+$color_gray: #bdbdbd;
+@mixin hoverLinksOrange {
+  color: $color_orange;
+}
+@mixin hoverLinksYellow {
+  background-color: $color_yellow;
+}
+@mixin hoverIconOrange {
+  filter: invert(1) brightness(50%) sepia(70%) saturate(10000%);
+}
+@mixin hoverIconYellow {
+  filter: invert(1) brightness(50%) sepia(40%) saturate(10000%);
+}
