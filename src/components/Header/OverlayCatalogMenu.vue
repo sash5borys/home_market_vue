@@ -99,7 +99,7 @@
 
 <script>
 export default {
-  name: "OverlayMobileMenu"
+  name: "OverlayCatalogMenu"
 };
 </script>
 

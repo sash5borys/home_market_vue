@@ -21,7 +21,7 @@ header, main, footer {
   @include flexContainer(column);
 }
 .nav-items {
-  > a {
+  > a, button {
     margin-right: map-get($margin_container, small);
     @include centered;
   }
@@ -65,13 +65,16 @@ header, main, footer {
 .nav-icon-blue:hover {
   @include hoverIconOrange;
 }
-#horizontal-line {
-  position: absolute;
-  height: 2px;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: $color_blue;
+#horizontal-container {
+  position: relative;
+  #horizontal-line {
+    position: absolute;
+    height: 2px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $color_blue;
+  }
 }
 
 // Global Components
