@@ -1,0 +1,117 @@
+a {
+  width: max-content;
+  color: $color-black;
+}
+button {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+header, main, footer {
+  width: 100%;
+  min-width: 400px;
+}
+.row-container {
+  @include flexContainer(row);
+}
+.col-container {
+  @include flexContainer(column);
+}
+.nav-items {
+  > a {
+    margin-right: map-get($margin_container, small);
+    @include centered;
+  }
+  img {
+    max-width: initial;
+  }
+}
+.sections {
+  > * {
+    margin: map-get($margin_container, small) 0;
+  }
+  > div {
+    width: max-content;
+  }
+}
+.nav-icon-orange:hover {
+  @include hoverIconYellow;
+}
+.nav-icon-blue:hover {
+  @include hoverIconOrange;
+}
+#horizontal-line {
+  position: absolute;
+  height: 2px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $color_blue;
+}
+
+// Global Components
+#logo {
+  text-decoration: none ;
+  font-family: $font_logo;
+  span,i {
+    font-size: map-get($image_size, small);
+  }
+  i {
+    color: $color_yellow;
+  }
+  span {
+    color: $color_white;
+  }
+}
+.form-button {
+  height: map-get($image_size, medium);
+  font-size: map-get($font_size, medium);
+  padding: 6px;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem 0.3rem;
+  color: $color_white;
+  background-color: $color_orange;
+  cursor: pointer;
+}
+.form-one-line {
+  flex: 1 1 auto;
+  margin-right: map-get($margin_container, small);
+  input,button {
+    height: map-get($image_size, medium);
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: none;
+    font-size: map-get($font_size, medium);
+  }
+  input {
+    flex: 1 1 auto;
+    border-radius: 0.3rem 0.3rem;
+    color: $color_gray;
+    background-color: $color_white;
+  }
+  button {
+    flex: 0 0 30px;
+    border-radius: 0.3rem 0.3rem;
+    background-color: $color_white;
+    cursor: pointer;
+    img {
+      height: map-get($font_size, big);
+      @include centered;
+    }
+  }
+}
+#phone-call {
+  justify-content: flex-start;
+  color: $color_orange;
+  &:hover {
+    text-decoration: none;
+    @include hoverIconYellow;
+  }
+  img {
+    height: map-get($font_size, medium);
+  }
+}
