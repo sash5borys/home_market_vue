@@ -22,11 +22,11 @@
     <!-- Start Navbar -->
     <div class="header-bottom-menu row-container">
       <div class="header-bottom-menu-start nav-items row-container">
-        <button class="nav-icon-orange" id="mobile-menu-open-button">
+        <a class="nav-icon-orange" id="mobile-menu-open-button">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAAChUlEQVRYhe2XS2gTURSGvzOkoShSK8QKulK0CN3YIkgbQTTWKahd16K4lWDduRDRKNSFG2kpCLoRXYjLtosmqOCjWYgLEQqCIghFUISG+sAYQo6bSTuZuWmSZhJd5F/N/e/rm3PPvXMHWmqpPkm1DfUQIdqJIuwBOqvslkF5T5Z5eUY+ECCN0UEbF1HO1QDi1RLKbSxuyhzf1w2kx+hFmAZ2rBPEq0WEYZnjTc1AOkgfFs+BjS77I/AUJVPV9EIncATY5XJ/IRwsB2UE0hgdhFhgNTIZIM4BHkmCQlUwxbESWLxihAJTCJsdexGhx7R8ZqAhxlEuOcWfKFFJ8bYWEMOY+1BeUoy4Mi4pLlcE0j7aiPCVYgIr5yXFVD0wK2PbjAETTnGJLF3e3Wf5ekUYYHU3LWNxNwgYALLcgZVl2sIG+r1NQoZu3a7nDpSs2oEhlUrpBl64LX+EINKg6f1SuryWCcgUtUapmXOtT/5dNkQE5aRTOyNzfAPQQbZicaJRvhFIbc4Ck8Amx/qBcsFpOVHiw5jzPFmvL0nulQO6D5ymuXogSc4UC6VJFSZOjn6UHADCXk/nTyi/fb7yzti+sh8mTNxd5c+ho+ymnc8A5LmB0utU/QHyCLcocBiLEQAKPCTMdQByXKnJz7JdHvPBy/BfyR8hmyjCQFNmV9KSZN5tmQ6mGMrVpgDBNSgFMp3U/1SVju40WvoGdUuIQvmUqAT0RFIkguRRm8RaQKYlc18rdwYJ48h9v172VvojZJF23ZpH1UYQFgJBUXqAUy7Hlw7l7tSzKMcDgSivGUky7DXL7bJRYLaBMNOI+Zu59o+izX6EAQpsCwTD4otzGL4OZLyWWjLoL0LnvmvShzvsAAAAAElFTkSuQmCC"
           />
-        </button>
+        </a>
         <a href id="logo">
           <span class="logo-text-long">
             <i>ХОУМ</i>ШОП
@@ -37,9 +37,14 @@
         </a>
       </div>
       <div class="header-bottom-menu-center row-container">
-        <div class="catalog-menu">
-          <button class="form-button nav-icon-orange" id="catalog-menu-open-button">Каталог</button>
+        <div class="catalog-menu" v-click-outside="hide">
+          <button
+            class="form-button nav-icon-orange"
+            id="catalog-menu-open-button"
+            @click="catalorHandler"
+          >Каталог</button>
           <!-- Overlay Catalog Menu -->
+          <OverlayCatalogMenu :class="{ open: localState.openOverlayCatalogMenu }" />
         </div>
         <form class="form-one-line nav-item row-container" id="search-products-form" action>
           <input type="text" placeholder="Я шукаю..." name="search_text" autocomplete="off" />
@@ -73,8 +78,34 @@
 </template>
 
 <script>
+import OverlayCatalogMenu from "@/components/Header/OverlayCatalogMenu";
+import { reactive } from "@vue/composition-api";
+
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    OverlayCatalogMenu
+  },
+  setup() {
+    const localState = reactive({
+      openOverlayCatalogMenu: false
+    });
+
+    function overlayCatalogMenu() {
+      function catalorHandler() {
+        localState.openOverlayCatalogMenu === false
+          ? (localState.openOverlayCatalogMenu = true)
+          : (localState.openOverlayCatalogMenu = false);
+      }
+      function hide() {
+        localState.openOverlayCatalogMenu = false;
+      }
+
+      return { catalorHandler, hide };
+    }
+
+    return { localState, ...overlayCatalogMenu() };
+  }
 };
 </script>
 

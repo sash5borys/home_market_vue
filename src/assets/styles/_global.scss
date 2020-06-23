@@ -1,6 +1,7 @@
 a {
   width: max-content;
   color: $color-black;
+  text-decoration: none;
 }
 button {
   padding: 0;
@@ -34,6 +35,28 @@ header, main, footer {
   }
   > div {
     width: max-content;
+  }
+}
+.category-text {
+  align-self: flex-start;
+  font-size: map-get($font-size, medium) * 1.2;
+  line-height: 1.8;
+  color: $color-blue;
+  &:hover {
+    filter: none;
+    text-decoration: none;
+  }
+  img {
+    margin-right: map-get($margin_container, small);
+  }
+}
+.category-links {
+  font-size: map-get($font-size, medium);
+  color: $color-black;
+  > a {
+    &:hover {
+      @include hoverLinksOrange;
+    }
   }
 }
 .nav-icon-orange:hover {
