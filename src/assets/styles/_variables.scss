@@ -64,5 +64,5 @@ $color_gray: #bdbdbd;
   filter: invert(1) brightness(50%) sepia(70%) saturate(10000%);
 }
 @mixin hoverIconYellow {
-  filter: invert(1) brightness(50%) sepia(40%) saturate(10000%);
+  filter: brightness(2.5);
 }
