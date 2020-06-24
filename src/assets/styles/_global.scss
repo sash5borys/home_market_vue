@@ -91,35 +91,21 @@ header, main, footer {
     color: $color_white;
   }
 }
-.form-button {
-  height: map-get($image_size, medium);
-  font-size: map-get($font_size, medium);
-  padding: 6px;
-  outline: none;
-  border: none;
-  border-radius: 0.3rem 0.3rem;
-  color: $color_white;
-  background-color: $color_orange;
-  cursor: pointer;
-}
 .form-one-line {
-  flex: 1 1 auto;
+  width: 100%;
   margin-right: map-get($margin_container, small);
-  input,button {
+  input {
     height: map-get($image_size, medium);
     width: 100%;
     padding: 6px;
     outline: none;
     border: none;
+    border-radius: 0.3rem 0.3rem;
+    color: $color-black;
+    background-color: $color_white;
     font-size: map-get($font_size, medium);
   }
-  input {
-    flex: 1 1 auto;
-    border-radius: 0.3rem 0.3rem;
-    color: $color_gray;
-    background-color: $color_white;
-  }
-  button {
+  .form-image {
     flex: 0 0 30px;
     border-radius: 0.3rem 0.3rem;
     background-color: $color_white;
@@ -129,6 +115,16 @@ header, main, footer {
       @include centered;
     }
   }
+}
+.form-button {
+  height: map-get($image_size, medium);
+  padding: 6px;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem 0.3rem;
+  color: $color_white;
+  background-color: $color_orange;
+  cursor: pointer;
 }
 #phone-call {
   justify-content: flex-start;

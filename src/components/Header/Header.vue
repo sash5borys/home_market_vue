@@ -53,9 +53,9 @@
           <!-- Overlay Catalog Menu -->
           <OverlayCatalogMenu :class="{ open: localState.openCatalogMenu }" />
         </div>
-        <form class="form-one-line nav-item row-container" id="search-products-form" action>
+        <form class="form-one-line row-container" id="search-products-form" action>
           <input type="text" placeholder="Я шукаю..." name="search_text" autocomplete="off" />
-          <button type="submit" name="search_submit">
+          <button class="form-image" type="submit" name="search_submit">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAACSUlEQVRYhe3XP2yNURjH8U9LKvWvLalGyyY60IQIHWwSSxOkjBZTh0aCEIPJJvHnmgxGi4iQICQigohB2YlBJBQRijbqPzWc97rH1Xt733tfaSX9JSd53jfn/M73Pe85z/u8TKu86lL0nYH16EEn2tCAl3iGa0n7mDHjX2rAzmTisQnaKI5iwb+C6cKjCkCK2zv0Zg3Tg5Giie5iL9ZgMVqxEjtwAT+ivj9xICuYtcJeyJs/TgAnUhduFT1EX60wC/E8Mryd3KtUM3EiGv8V3bUA5SKzh2iuwqMOpyOfAelO9G914HNi8l14BdVqDgYjqC3VmOyKDE7VAJNXX+R3thqDG5HBhgyA5ims+AhmpTV4mwz+IGzOLHRd4SFXTNS5Poob0ZLEg8IeykJPorg9DVBTFA9nBAPvo7ilZK9EMdCQkF0JGTgrtRXNUTHQN7xJ4g7MzQioM4oH0w4+r7ABt2UA06bwfXulguRYX3R9MYr7MwDqj+a4nICl0ny8VlilTTXALBXSR95rVbVGuyOTISyrwqMR9yOfc9XCELLpvcjsKVanGN8qVAj58Z+E2qkmtfuzBBnFQeVPXr1QqMUf1Hw7XOnE5XZ9Jy5heXRvGFdxEy+EbL4I67AZS8r4HcH+SsFKqRlnhISZpqYeb5XGEqhM1I0r+DIByAC2C68vV6JPWai0VVwTNir8l80WTuID3BFq71g57BnH5xj2pZw7Mx0y/krlJguoHNTxaagildroWycTqnilTqryFylL5aGmBExevaYQzP+jX9qT276ype3EAAAAAElFTkSuQmCC"
             />
